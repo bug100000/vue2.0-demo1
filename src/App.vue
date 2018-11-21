@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/img/logo_vue.png"> -->
-    <div id="yTop">
-      <span>admin</span>
-      <span>注销</span>
+    <div id="yTop" ref="yTop">
+      <span class="theme"><img src="./assets/img/logoicon.png" alt="">后台管理</span>
+      <span class="Cancellation">注销</span>
+      <span class="user">admin</span>
     </div>
     <div id="yBodyBox" ref="yBodyBox">
       <el-row class="tac" id="yLeftNav">
@@ -44,8 +45,10 @@
 export default {
     name: "App",
     mounted: function() {
+      
+        // this.$refs.yTop.style.width = document.documentElement.clientWidth + "px";
         this.$refs.yBodyBox.style.height = Number(document.documentElement.clientHeight) - 60 + "px";
-        this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
+        // this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
     },
     methods: {
         handleOpen(key, keyPath) {
@@ -68,14 +71,13 @@ export default {
     /* margin-top: 60px; */
 }
 
+/* 自定义样式 */
+
 .el-menu-item {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #yTop {
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 100%;
     height: 60px;
     background-color: #ebebf7;
@@ -86,7 +88,6 @@ export default {
 }
 
 #yLeftNav {
-    margin-top: 60px;
     width: 201px;
     height: 100%;
     background-color: rgb(84, 92, 100);
@@ -99,4 +100,34 @@ export default {
     height: 100%;
     background-color: gray;
 }
+
+.theme{
+  position: relative;
+  display: inline-block;
+  width: 201px;
+  height: 100%;
+  color: white;
+  background-color: #3d3e90;
+  text-align: center;
+  line-height: 60px;
+}
+
+.theme img {
+  position: absolute;
+  top: 7px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+}
+
+.Cancellation{
+  float: right;
+}
+
+.user{
+  float: right;
+}
+
+/* 自定义样式 */
+
 </style>
