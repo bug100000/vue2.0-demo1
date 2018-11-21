@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    12312312312312321
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
