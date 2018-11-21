@@ -1,10 +1,20 @@
 <template>
   <div id="app">
+    <!-- <el-container>
+          <el-header>Header</el-header>
+          <el-container>
+            <el-aside width="200px">Aside</el-aside>
+            <el-container>
+              <el-main>Main</el-main>
+              <el-footer>Footer</el-footer>
+            </el-container>
+          </el-container>
+        </el-container> -->
     <!-- <img src="./assets/img/logo_vue.png"> -->
     <div id="yTop" ref="yTop">
       <span class="theme"><img src="./assets/img/logoicon.png" alt="">后台管理</span>
-      <span class="Cancellation">注销</span>
-      <span class="user">admin</span>
+      <span class="Cancellation"><img src="./assets/img/loginOuticon.png" alt=""> 注销</span>
+      <span class="user"><img src="./assets/img/systymAdminIcon.png" alt=""> admin</span>
     </div>
     <div id="yBodyBox" ref="yBodyBox">
       <el-row class="tac" id="yLeftNav">
@@ -35,7 +45,18 @@
         </el-col>
       </el-row>
       <div id="yBody" ref="yBody">
-        <router-view/>
+        <div class="y-body-title">
+          <el-breadcrumb separator-class="el-icon-arrow-right">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>活动管理</el-breadcrumb-item>
+            <el-breadcrumb-item>活动列表</el-breadcrumb-item>
+            <el-breadcrumb-item>活动详情</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+        <div class="y-body-body" ref="yBodyBody">
+          <router-view/>
+        </div>
+        <div class="y-body-footer"></div>
       </div>
     </div>
   </div>
@@ -45,9 +66,11 @@
 export default {
     name: "App",
     mounted: function() {
-      
         // this.$refs.yTop.style.width = document.documentElement.clientWidth + "px";
-        this.$refs.yBodyBox.style.height = Number(document.documentElement.clientHeight) - 60 + "px";
+        this.$refs.yBodyBox.style.height =
+            Number(document.documentElement.clientHeight) - 60 + "px";
+        this.$refs.yBodyBody.style.maxHeight =
+            Number(document.documentElement.clientHeight) - 174 + "px";
         // this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
     },
     methods: {
@@ -98,36 +121,109 @@ export default {
     top: 0;
     left: 201px;
     height: 100%;
-    background-color: gray;
+    background-color: #fafafc;
 }
 
-.theme{
-  position: relative;
-  display: inline-block;
-  width: 201px;
-  height: 100%;
-  color: white;
-  background-color: #3d3e90;
-  text-align: center;
-  line-height: 60px;
+.theme {
+    position: relative;
+    display: inline-block;
+    width: 201px;
+    height: 100%;
+    color: white;
+    background-color: #3d3e90;
+    text-align: center;
+    line-height: 60px;
 }
 
 .theme img {
-  position: absolute;
-  top: 7px;
-  left: 20px;
-  width: 45px;
-  height: 45px;
+    position: absolute;
+    top: 7px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
 }
 
-.Cancellation{
-  float: right;
+.Cancellation {
+    float: right;
+    line-height: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    cursor: pointer;
 }
 
-.user{
-  float: right;
+.Cancellation img {
+    position: relative;
+    top: 2px;
 }
 
+.user {
+    float: right;
+    line-height: 60px;
+}
+
+.user img {
+    position: relative;
+    top: 2px;
+}
+
+.y-body-title {
+    padding-left: 30px;
+    height: 58px;
+    line-height: 58px;
+}
+
+.y-body-title div {
+    line-height: 58px;
+}
+
+.y-body-body {
+    padding-left: 30px;
+    overflow: auto;
+}
+
+.y-body-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 58px;
+    background-color: #b3c0d1;
+}
 /* 自定义样式 */
 
+/* element页面布局样式 */
+.el-header,
+.el-footer {
+    background-color: #b3c0d1;
+    color: #333;
+    text-align: center;
+    line-height: 60px;
+}
+
+.el-aside {
+    background-color: #d3dce6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+}
+
+.el-main {
+    background-color: #e9eef3;
+    color: #333;
+    text-align: center;
+    line-height: 160px;
+}
+
+body > .el-container {
+    margin-bottom: 40px;
+}
+
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+/* 页面布局样式 */
 </style>
