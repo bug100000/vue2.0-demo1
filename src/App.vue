@@ -30,6 +30,69 @@
                             <i class="el-icon-setting"></i>
                             <span slot="title">导航四</span>
                         </el-menu-item>
+                        <el-submenu index="1">
+                            <template slot="title">
+                                <i class="el-icon-location"></i>
+                                <span>导航一</span>
+                            </template>
+                            <el-menu-item index="1-1">选项1</el-menu-item>
+                            <el-menu-item index="1-2">选项2</el-menu-item>
+                            <el-menu-item index="1-3">选项3</el-menu-item>
+                            <el-submenu index="1-4">
+                                <template slot="title">选项4</template>
+                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                        </el-menu-item>
+                        <el-submenu index="1">
+                            <template slot="title">
+                                <i class="el-icon-location"></i>
+                                <span>导航一</span>
+                            </template>
+                            <el-menu-item index="1-1">选项1</el-menu-item>
+                            <el-menu-item index="1-2">选项2</el-menu-item>
+                            <el-menu-item index="1-3">选项3</el-menu-item>
+                            <el-submenu index="1-4">
+                                <template slot="title">选项4</template>
+                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                        </el-menu-item>
+                        <el-submenu index="1">
+                            <template slot="title">
+                                <i class="el-icon-location"></i>
+                                <span>导航一</span>
+                            </template>
+                            <el-menu-item index="1-1">选项1</el-menu-item>
+                            <el-menu-item index="1-2">选项2</el-menu-item>
+                            <el-menu-item index="1-3">选项3</el-menu-item>
+                            <el-submenu index="1-4">
+                                <template slot="title">选项4</template>
+                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <i class="el-icon-setting"></i>
+                            <span slot="title">导航四</span>
+                        </el-menu-item>
                     </el-menu>
                 </el-col>
             </el-row>
@@ -43,6 +106,7 @@
                     </el-breadcrumb>
                 </div>
                 <div class="y-body-body" ref="yBodyBody">
+                    <div>活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表</div>
                     <router-view/>
                 </div>
                 <div class="y-body-footer">活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表</div>
@@ -58,7 +122,8 @@ export default {
         // 顶部
         // this.$refs.yTop.style.width = document.documentElement.clientWidth + "px";
         // 下面大盒子
-        this.$refs.yBodyBox.style.height = Number(document.documentElement.clientHeight) - 60 + "px";
+        this.$refs.yBodyBox.style.height =
+            Number(document.documentElement.clientHeight) - 60 + "px";
         // 右面盒子
         // this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
         // 内容部分
@@ -77,8 +142,8 @@ export default {
 
 <style>
 #app {
-    display: flex;  
-    flex-direction: column;  
+    display: flex;
+    flex-direction: column;
     flex-basis: auto;
     box-sizing: border-box;
     min-width: 0;
@@ -120,6 +185,8 @@ export default {
     flex: none;
     width: 201px;
     height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
     background-color: rgb(84, 92, 100);
 }
 
@@ -178,7 +245,7 @@ export default {
 }
 
 .y-body-title {
-    flex: none;    
+    flex: none;
     padding-left: 30px;
     height: 58px;
     line-height: 58px;
@@ -200,6 +267,32 @@ export default {
     height: 58px;
     background-color: #b3c0d1;
 }
+
+/*滚动条样式*/
+
+#yLeftNav::-webkit-scrollbar,
+.y-body-body::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+}
+#yLeftNav::-webkit-scrollbar-thumb,
+.y-body-body::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+}
+#yLeftNav::-webkit-scrollbar-track,
+.y-body-body::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/*滚动条样式*/
+
 /* 自定义样式 */
 
 /* element页面布局样式 */
