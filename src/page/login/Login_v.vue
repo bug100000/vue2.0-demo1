@@ -104,7 +104,7 @@ body{
     position: relative;
     width: 100%;
     height: 100vh;
-    background-image: url(../assets/img/logBg.png);
+    background-image: url(../../assets/img/logBg.png);
     background-position:center;
 }
 

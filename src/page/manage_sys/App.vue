@@ -1,9 +1,9 @@
 <template>
     <div id="app">
         <div id="yTop" ref="yTop">
-            <span class="theme"><img src="./assets/img/logoicon.png" alt="">后台管理</span>
-            <span class="Cancellation"><img src="./assets/img/loginOuticon.png" alt=""> 注销</span>
-            <span class="user"><img src="./assets/img/systymAdminIcon.png" alt=""> admin</span>
+            <span class="theme"><img src="../../assets/img/logoicon.png" alt="">后台管理</span>
+            <span class="Cancellation"><img src="../../assets/img/loginOuticon.png" alt=""> 注销</span>
+            <span class="user"><img src="../../assets/img/systymAdminIcon.png" alt=""> admin</span>
         </div>
         <div id="yBodyBox" ref="yBodyBox">
             <el-row class="tac" id="yLeftNav">
@@ -26,72 +26,33 @@
                             <i class="el-icon-menu"></i>
                             <span slot="title">导航二</span>
                         </el-menu-item>
-                        <el-menu-item index="4">
+                        <el-menu-item index="3">
                             <i class="el-icon-setting"></i>
-                            <span slot="title">导航四</span>
-                        </el-menu-item>
-                        <el-submenu index="1">
-                            <template slot="title">
-                                <i class="el-icon-location"></i>
-                                <span>导航一</span>
-                            </template>
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
-                            <el-menu-item index="1-3">选项3</el-menu-item>
-                            <el-submenu index="1-4">
-                                <template slot="title">选项4</template>
-                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-                            </el-submenu>
-                        </el-submenu>
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
+                            <span slot="title">导航三</span>
                         </el-menu-item>
                         <el-menu-item index="4">
-                            <i class="el-icon-setting"></i>
+                            <i class="el-icon-star-on"></i>
                             <span slot="title">导航四</span>
                         </el-menu-item>
-                        <el-submenu index="1">
-                            <template slot="title">
-                                <i class="el-icon-location"></i>
-                                <span>导航一</span>
-                            </template>
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
-                            <el-menu-item index="1-3">选项3</el-menu-item>
-                            <el-submenu index="1-4">
-                                <template slot="title">选项4</template>
-                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-                            </el-submenu>
-                        </el-submenu>
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
+                        <el-menu-item index="5">
+                            <i class="el-icon-location"></i>
+                            <span slot="title">导航五</span>
                         </el-menu-item>
-                        <el-menu-item index="4">
-                            <i class="el-icon-setting"></i>
-                            <span slot="title">导航四</span>
+                        <el-menu-item index="6">
+                            <i class="el-icon-picture"></i>
+                            <span slot="title">导航六</span>
                         </el-menu-item>
-                        <el-submenu index="1">
-                            <template slot="title">
-                                <i class="el-icon-location"></i>
-                                <span>导航一</span>
-                            </template>
-                            <el-menu-item index="1-1">选项1</el-menu-item>
-                            <el-menu-item index="1-2">选项2</el-menu-item>
-                            <el-menu-item index="1-3">选项3</el-menu-item>
-                            <el-submenu index="1-4">
-                                <template slot="title">选项4</template>
-                                <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-                            </el-submenu>
-                        </el-submenu>
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
+                        <el-menu-item index="7">
+                            <i class="el-icon-upload"></i>
+                            <span slot="title">导航七</span>
                         </el-menu-item>
-                        <el-menu-item index="4">
-                            <i class="el-icon-setting"></i>
-                            <span slot="title">导航四</span>
+                        <el-menu-item index="8">
+                            <i class="el-icon-phone"></i>
+                            <span slot="title">导航八</span>
+                        </el-menu-item>
+                        <el-menu-item index="9">
+                            <i class="el-icon-d-caret"></i>
+                            <span slot="title">导航九</span>
                         </el-menu-item>
                     </el-menu>
                 </el-col>
@@ -106,7 +67,6 @@
                     </el-breadcrumb>
                 </div>
                 <div class="y-body-body" ref="yBodyBody">
-                    <div>活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表</div>
                     <router-view/>
                 </div>
                 <div class="y-body-footer">活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表</div>
