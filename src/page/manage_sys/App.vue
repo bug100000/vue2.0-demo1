@@ -8,11 +8,15 @@
         <div id="yBodyBox" ref="yBodyBox">
             <el-row class="tac" id="yLeftNav">
                 <el-col style="width: 201px;">
-                    <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" background-color="#545c64" text-color="#fff" active-text-color="#ffd04b" style="border: none;">
-                        <el-submenu index="1">
+                    <el-menu :router="true" default-active="/" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" background-color="#32323a" text-color="#9aa1a9" active-text-color="#fff">
+                        <el-menu-item index="/">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航一</span>
+                        </el-menu-item>
+                        <el-submenu index="2">
                             <template slot="title">
                                 <i class="el-icon-location"></i>
-                                <span>导航一</span>
+                                <span>导航二</span>
                             </template>
                             <el-menu-item index="1-1">选项1</el-menu-item>
                             <el-menu-item index="1-2">选项2</el-menu-item>
@@ -22,11 +26,7 @@
                                 <el-menu-item index="1-4-1">选项4-1</el-menu-item>
                             </el-submenu>
                         </el-submenu>
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
-                        </el-menu-item>
-                        <el-menu-item index="3">
+                        <el-menu-item index="/list">
                             <i class="el-icon-setting"></i>
                             <span slot="title">导航三</span>
                         </el-menu-item>
@@ -58,18 +58,8 @@
                 </el-col>
             </el-row>
             <div id="yBody" ref="yBody">
-                <div class="y-body-title">
-                    <el-breadcrumb separator-class="el-icon-arrow-right">
-                        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-                        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-                        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-                    </el-breadcrumb>
-                </div>
-                <div class="y-body-body" ref="yBodyBody">
-                    <router-view/>
-                </div>
-                <div class="y-body-footer">活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表活动列表</div>
+                <router-view />
+                <div class="y-body-footer">Copyright DAB</div>
             </div>
         </div>
     </div>
@@ -116,8 +106,15 @@ export default {
 
 /* 自定义样式 */
 
-.el-menu-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.pulic-page-class {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.el-menu-item,
+.el-submenu__title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 #yTop {
@@ -147,7 +144,7 @@ export default {
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(84, 92, 100);
+    background-color: rgb(50, 50, 58);
 }
 
 #yBody {
@@ -209,6 +206,7 @@ export default {
     padding-left: 30px;
     height: 58px;
     line-height: 58px;
+    border-top: 1px solid #dcdceb;
     border-bottom: 1px solid #dcdceb;
 }
 
@@ -218,14 +216,17 @@ export default {
 
 .y-body-body {
     flex: auto;
-    padding-left: 30px;
+    padding: 20px 30px;
     overflow: auto;
 }
 
 .y-body-footer {
     flex: none;
+    padding-left: 20px;
     height: 58px;
-    background-color: #b3c0d1;
+    line-height: 58px;
+    background-color: #e6ebec;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /*滚动条样式*/
