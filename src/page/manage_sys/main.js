@@ -9,6 +9,8 @@ Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
+Vue.component('Message', Message)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

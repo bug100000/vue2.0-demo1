@@ -1,38 +1,33 @@
+
 <template>
-    <div class="hello">
-        <template>
-            <el-button :plain="true" @click="open2">成功</el-button>
-            <el-button :plain="true" @click="open3">警告</el-button>
-            <el-button :plain="true" @click="open">消息</el-button>
-            <el-button :plain="true" @click="open4">错误</el-button>
-        </template>
+    <div>
+        <!-- <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button> -->
+        <el-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
+            <span>这是一段信息</span>
+            <span slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 
+
 <script>
 export default {
-    name: "Message",
     data() {
-        return {};
+        return {
+            dialogVisible: false
+        };
     },
     methods: {
-        open() {
-            this.$message("这是一条消息提示");
-        },
-        open2() {
-            this.$message({
-                message: "恭喜你，这是一条成功消息",
-                type: "success"
-            });
-        },
-        open3() {
-            this.$message({
-                message: "警告哦，这是一条警告消息",
-                type: "warning"
-            });
-        },
-        open4() {
-            this.$message.error("错了哦，这是一条错误消息");
+        handleClose(done) {
+            done();
+            // this.$confirm("确认关闭？")
+            //     .then(_ => {
+            //         done();
+            //     })
+            //     .catch(_ => {});
         }
     }
 };

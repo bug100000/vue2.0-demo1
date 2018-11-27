@@ -62,6 +62,7 @@
                 <div class="y-body-footer">Copyright DAB</div>
             </div>
         </div>
+        <Message />
     </div>
 </template>
 
