@@ -6,7 +6,7 @@
                 <el-breadcrumb-item>表格</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-        <div class="y-body-body" ref="yBodyBody">
+        <div v-loading="loading" class="y-body-body" ref="yBodyBody">
             <el-form :inline="true" :model="formInline" class="demo-form-inline">
                 <el-form-item label="时间：">
                     <el-date-picker v-model="value5" type="datetimerange" :picker-options="pickerOptions2" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期" align="right">
@@ -120,7 +120,9 @@ export default {
             currentPage1: 5,
             currentPage2: 5,
             currentPage3: 5,
-            currentPage4: 4
+            currentPage4: 4,
+            // 指定元素加载中
+            loading: true
         };
     },
     mounted: function() {
@@ -182,6 +184,22 @@ export default {
         ];
         // console.log(this.tableData);
         this.tableData = ajaxDate;
+
+        // 指定元素加载中
+        setTimeout(() => {
+            this.loading = false;
+        }, 2000);
+
+        // 全屏加载中
+        // const loading = this.$loading({
+        //   lock: true,
+        //   text: 'Loading',
+        //   spinner: 'el-icon-loading',
+        //   background: 'rgba(0, 0, 0, 0.7)'
+        // });
+        // setTimeout(() => {
+        //   loading.close();
+        // }, 3000);
     },
     methods: {
         onSubmit() {
