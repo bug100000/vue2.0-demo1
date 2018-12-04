@@ -2,6 +2,7 @@
     <div class="hello pulic-page-class">
         <div class="y-body-title">
             <el-breadcrumb separator-class="el-icon-arrow-right">
+                <img class="breadcrumb-left-verticalPole" src="../../../assets/img/indexIcon.png" alt="">
                 <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
@@ -29,22 +30,3 @@ export default {
     }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-    font-weight: normal;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
-</style>

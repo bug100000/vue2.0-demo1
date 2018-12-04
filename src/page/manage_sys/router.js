@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Home from './components/Home.vue'
 import List from './components/List.vue'
 import Upload from './components/Upload.vue'
+import RichText from './components/RichText.vue'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/upload',
       name: 'Upload',
       component: Upload
+    },
+    {
+      path: '/rich_text',
+      name: 'RichText',
+      component: RichText
     }
   ]
 })

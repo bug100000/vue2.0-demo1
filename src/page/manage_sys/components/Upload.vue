@@ -1,8 +1,9 @@
 <template>
     <div class="hello pulic-page-class">
         <div class="y-body-title">
+            <img class="breadcrumb-left-verticalPole" src="../../../assets/img/indexIcon.png" alt="">
             <el-breadcrumb separator-class="el-icon-arrow-right">
-                <el-breadcrumb-item :to="{ path: '/' }">上传</el-breadcrumb-item>
+                <el-breadcrumb-item :to="{ path: '/upload' }">上传</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div class="y-body-body" ref="yBodyBody">
@@ -55,22 +56,3 @@ export default {
     }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-    font-weight: normal;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
-</style>

@@ -2,8 +2,8 @@
     <div class="hello pulic-page-class">
         <div class="y-body-title">
             <el-breadcrumb separator-class="el-icon-arrow-right">
-                <el-breadcrumb-item :to="{ path: '/list' }">导航三</el-breadcrumb-item>
-                <el-breadcrumb-item>表格</el-breadcrumb-item>
+                <img class="breadcrumb-left-verticalPole" src="../../../assets/img/indexIcon.png" alt="">
+                <el-breadcrumb-item :to="{ path: '/list' }">表格</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
         <div v-loading="loading" class="y-body-body" ref="yBodyBody">
@@ -223,22 +223,3 @@ export default {
     }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1,
-h2 {
-    font-weight: normal;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
-}
-</style>

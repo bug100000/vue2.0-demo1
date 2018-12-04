@@ -31,9 +31,9 @@
                     <i class="el-icon-location"></i>
                     <span slot="title">导航五</span>
                 </el-menu-item>
-                <el-menu-item index="6">
+                <el-menu-item index="/rich_text">
                     <i class="el-icon-picture"></i>
-                    <span slot="title">导航六</span>
+                    <span slot="title">富文本编辑器</span>
                 </el-menu-item>
                 <el-menu-item index="/upload">
                     <i class="el-icon-upload"></i>
@@ -54,16 +54,7 @@
 
 <script>
 export default {
-    name: "Home",
-    data() {
-        return {
-            msg: "Welcome to Your Vue.js App"
-        };
-    },
-    mounted: function() {
-        // 内容部分
-        // this.$refs.yBodyBody.style.height = Number(document.documentElement.clientHeight) - 176 + "px";
-    },
+    name: "LeftNav",
     methods: {
         handleOpen(key, keyPath) {
             console.log(key, keyPath);
@@ -74,3 +65,14 @@ export default {
     }
 };
 </script>
+
+<style>
+#yLeftNav {
+    flex: none;
+    width: 201px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgb(50, 50, 58);
+}
+</style>

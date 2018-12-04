@@ -81,15 +81,6 @@ export default {
     min-height: 0;
 }
 
-#yLeftNav {
-    flex: none;
-    width: 201px;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    background-color: rgb(50, 50, 58);
-}
-
 #yBody {
     flex: auto;
     display: flex;
