@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Home from './components/Home.vue'
-import List from './components/List.vue'
-import Upload from './components/Upload.vue'
-import RichText from './components/RichText.vue'
+import Home from './spa/Home.vue'
+import List from './spa/List.vue'
+import Upload from './spa/Upload.vue'
+import RichText from './spa/RichText.vue'
 
 Vue.use(Router)
 
