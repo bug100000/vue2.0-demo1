@@ -13,15 +13,22 @@
                     <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                 </el-upload>
             </div>
-            <button v-on:click="action">点击跳往富文本页面</button>
-            <button v-on:click="$emit('enlarge-text', 1)">触发父级事件</button>
+            <div>
+                <button v-on:click="action">点击跳往富文本页面</button>
+            </div>
+            <div>
+                <ComDemo v-on:enlarge-text="action1">123</ComDemo>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
+import ComDemo from "../components/ComDemo";
+
 export default {
-    name: "Home",
+    name: "Upload",
+    components: { ComDemo },
     data() {
         return {
             msg: "Welcome to Your Vue.js App",
@@ -63,6 +70,9 @@ export default {
                     id: 111
                 }
             });
+        },
+        action1(param){
+            console.log(param);
         }
     }
 };
