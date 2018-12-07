@@ -8,7 +8,7 @@
         <div id="yBodyBox" ref="yBodyBox">
             <LeftNav />
             <div id="yBody" ref="yBody">
-                <router-view />
+                <router-view v-on:enlarge-text="action1" />
                 <div class="y-body-footer">Copyright DAB</div>
             </div>
         </div>
@@ -29,6 +29,11 @@ export default {
         // this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
         // 内容部分
         // this.$refs.yBodyBody.style.height = Number(document.documentElement.clientHeight) - 176 + "px";
+    },
+    methods: {
+        action1(param){
+            console.log(param);
+        }
     }
 };
 </script>

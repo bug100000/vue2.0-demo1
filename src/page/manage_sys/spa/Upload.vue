@@ -14,6 +14,7 @@
                 </el-upload>
             </div>
             <button v-on:click="action">点击跳往富文本页面</button>
+            <button v-on:click="$emit('enlarge-text', 1)">触发父级事件</button>
         </div>
     </div>
 </template>
