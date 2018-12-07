@@ -13,6 +13,7 @@
                     <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
                 </el-upload>
             </div>
+            <button v-on:click="action">点击跳往富文本页面</button>
         </div>
     </div>
 </template>
@@ -52,6 +53,15 @@ export default {
         },
         handlePreview(file) {
             console.log(file);
+        },
+        action() {
+            // js控制路由跳转
+            this.$router.push({
+                path: "/rich_text",
+                query: {
+                    id: 111
+                }
+            });
         }
     }
 };

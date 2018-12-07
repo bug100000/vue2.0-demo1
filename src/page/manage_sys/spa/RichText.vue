@@ -14,6 +14,7 @@
                     <div ref="showText">{{showText}}</div>
                 </el-form>
             </div>
+            <button v-on:click="action">后退一个页面</button>
         </div>
     </div>
 </template>
@@ -29,6 +30,9 @@ export default {
             showText: ""
         };
     },
+    mounted: function() {
+        console.log(this.$route.query.id);
+    },
     methods: {
         onEditorBlur(e) {
             //失去焦点事件
@@ -38,7 +42,9 @@ export default {
         },
         onEditorChange(e) {
             //内容改变事件
-            let node = document.getElementsByClassName("ql-editor")[0].cloneNode(true);
+            let node = document
+                .getElementsByClassName("ql-editor")[0]
+                .cloneNode(true);
             let text = this.domToString(node);
             this.$refs.showText.innerHTML = text;
         },
@@ -48,6 +54,12 @@ export default {
             let str = tmpNode.innerHTML;
             tmpNode = node = null; // 解除引用，以便于垃圾回收
             return str;
+        },
+        action() {
+            // js控制后退一个页面
+            this.$router.go(-1);
+            // window.history.go(-1);
+            // window.history.back();
         }
     }
 };
