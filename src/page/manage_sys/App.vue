@@ -20,15 +20,8 @@
 export default {
     name: "App",
     mounted: function() {
-        // 顶部
-        // this.$refs.yTop.style.width = document.documentElement.clientWidth + "px";
-        // 下面大盒子
         this.$refs.yBodyBox.style.height =
             Number(document.documentElement.clientHeight) - 60 + "px";
-        // 右面盒子
-        // this.$refs.yBody.style.width = Number(document.documentElement.clientWidth) - 201 + "px";
-        // 内容部分
-        // this.$refs.yBodyBody.style.height = Number(document.documentElement.clientHeight) - 176 + "px";
     },
     methods: {}
 };
