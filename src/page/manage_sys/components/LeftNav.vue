@@ -27,9 +27,9 @@
                     <i class="el-icon-star-on"></i>
                     <span slot="title">导航四</span>
                 </el-menu-item>
-                <el-menu-item index="5">
+                <el-menu-item index="/vuex">
                     <i class="el-icon-location"></i>
-                    <span slot="title">导航五</span>
+                    <span slot="title">vuex</span>
                 </el-menu-item>
                 <el-menu-item index="/rich_text">
                     <i class="el-icon-picture"></i>

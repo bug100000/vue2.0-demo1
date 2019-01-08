@@ -19,6 +19,9 @@
 <script>
 export default {
     name: "App",
+    computed: {
+        count() {}
+    },
     mounted: function() {
         this.$refs.yBodyBox.style.height =
             Number(document.documentElement.clientHeight) - 60 + "px";

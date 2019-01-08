@@ -5,6 +5,7 @@ import Home from './spa/Home.vue'
 import List from './spa/List.vue'
 import Upload from './spa/Upload.vue'
 import RichText from './spa/RichText.vue'
+import Vuex from './spa/Vuex.vue'
 
 Vue.use(Router)
 
@@ -29,6 +30,11 @@ export default new Router({
       path: '/rich_text',
       name: 'RichText',
       component: RichText
+    },
+    {
+      path: '/vuex',
+      name: 'Vuex',
+      component: Vuex
     }
   ]
 })
